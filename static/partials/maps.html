@@ -1,0 +1,29 @@
+  <div id="map_canvas" ng-controller="mapsCtrl">
+      <h3>map goes here</h3>
+      <div class="container-fluid">
+          <div class="row">
+            <ng-map  style="height: 500px; display: block" center="{{ centerCoordinates }}" zoom-to-include-markers="true">
+                <marker ng-repeat="data in mapData" id="{{ data.id }}" position="{{ data.coordinates }}" title="Vehicle make {{ data.make }}" on-click="showDetail(data)"></marker>
+            </ng-map>
+          </div>
+          <div class="row">
+              <h3>Vehicle Data</h3>
+              <table style="width:100%">
+                  <tr>
+                      <th>Vehicle Make</th>
+                      <th>Vehicle Model</th>
+                      <th>Vehicle Price</th>
+                      <th>Latitude</th>
+                      <th>Longitude</th>
+                  </tr>
+                  <tr ng-repeat="data in mapData">
+                      <td>{{ data.make }}</td>
+                      <td>{{ data.model }}</td>
+                      <td>{{ data.price }}</td>
+                      <td>{{ data.coordinates[0] }}</td>
+                      <td>{{ data.coordinates[1] }}</td>
+                  </tr>
+              </table>
+          </div>
+      </div>
+  </div>

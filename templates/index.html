@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <div class="container-fluid">
+        <div class="container">
+            <head>
+                <!-- >external dependency</!-->
+                <link rel="styleSheet" type="text/css" href="/static/css/bootstrap.css"/>
+
+                <script src="/static/js/3rdparty/angular-1.5.3/angular.js"></script>
+                <script src="/static/js/3rdparty/angular-1.5.3/angular-touch.js" defer></script>
+                <script src="/static/js/3rdparty/angular-1.5.3/angular-animate.js" defer></script>
+                <script src="/static/js/3rdparty/angular-1.5.3/angular-route.js" defer></script>
+                <script src="/static/js/3rdparty/angular-1.5.3/docs/components/jquery-2.1.1/jquery.js" defer></script>
+                <script src="/static/js/3rdparty/angular-1.5.3/docs/components/bootstrap-3.1.1/js/bootstrap.js" defer></script>
+
+
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzg48c7n1vp-wxT4klRCLg23bmD9JAhrc&callback=angular.noop" defer></script>
+                <script src="/static/js/3rdparty/ng-map.min.js"></script>
+
+
+                 <!-- >JS pages</!-->
+                <script src="/static/js/app.js"></script>
+
+                <script src="/static/js/index.js" defer></script>
+                <script src="/static/js/maps.js" defer></script>
+
+                <title>Carbitrage</title>
+
+            </head>
+
+            <body ng-app="myApp">
+
+                <h3 align="center">Carbitrage</h3>
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#/index">Home</a></li>
+                                <li><a href="#/maps">Maps</a></li>
+                                <li><a href="#/about">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div ng-view></div>
+            </body>
+        </div>
+    </div>
+</html>
+
