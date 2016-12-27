@@ -1,7 +1,7 @@
-myApp.controller('mapsCtrl', function($scope, $http, pyTool){
+myApp.controller('mapsCtrl', function($scope, $http){
 
     $scope.centerCoordinates = [37.09024, -95.71289100000001];
-    $scope.vehicle = [];
+    $scope.vehicles = [];
     $scope.latitude = 40.04968;
     $scope.longitude = -82.83061900000001;
     $scope.mapData = [
@@ -17,12 +17,13 @@ myApp.controller('mapsCtrl', function($scope, $http, pyTool){
     //     function (response) {
     //         $scope.vehicle = response.data
     // });
-    // $scope.getTestData = function(){
-    //     $http.get('/test.py/my_first_function').success(function(response){
-    //         $scope.vehicle = response.data
-    //     });
-    // };
-    // $scope.getTestData();
-    // console.log(vehicle);
+
+    $http.get("/carbitrage/gettest").success(function(data){
+        data.forEach(function(entry){
+            $scope.vehicles.push(entry);
+        })
+
+    });
+    //console.log($scope.vehicle);
 });
 
