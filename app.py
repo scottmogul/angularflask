@@ -1,4 +1,5 @@
 from flask import Flask, send_file
+
 from test import Test
 
 app = Flask(__name__)
@@ -12,7 +13,6 @@ def index():
 @app.route("/carbitrage/gettest")
 def get_test():
     t = Test();
-    print(t.my_first_function());
     return t.my_first_function();
 
 

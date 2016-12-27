@@ -3,7 +3,7 @@
       <div class="container-fluid">
           <div class="row">
             <ng-map  style="height: 500px; display: block" center="{{ centerCoordinates }}" zoom-to-include-markers="true">
-                <marker ng-repeat="data in mapData" id="{{ data.id }}" position="{{ data.coordinates }}" title="Vehicle make {{ data.make }}" on-click="showDetail(data)"></marker>
+                <marker ng-repeat="data in vehicles" id="{{ data.id }}" position="{{ data.coordinates }}" title="Vehicle make {{ data.make }}" on-click="showDetail(data)"></marker>
             </ng-map>
           </div>
           <div class="row">
@@ -16,7 +16,7 @@
                       <th>Latitude</th>
                       <th>Longitude</th>
                   </tr>
-                  <tr ng-repeat="data in mapData">
+                  <tr ng-repeat="data in vehicles">
                       <td>{{ data.make }}</td>
                       <td>{{ data.model }}</td>
                       <td>{{ data.price }}</td>
@@ -25,11 +25,6 @@
                   </tr>
               </table>
           </div>
-          <div >
-              <h1>Here</h1>
-              <tr ng-repeat="vehicle in vehicles">
-                  <td>{{ vehicle }}</td>
-              </tr>
-          </div>
+
       </div>
   </div>
