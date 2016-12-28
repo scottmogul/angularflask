@@ -12,9 +12,9 @@ def index():
 
 @app.route("/carbitrage/gettest")
 def get_test():
-    t = Test();
-    return t.my_first_function();
+    t = Test()
+    return t.my_first_function()
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
